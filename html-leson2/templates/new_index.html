@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{%block title%} Владимир Сергеевич {%endblock%}
+{% block content %}
+
+<section class="profile">
+    <img src="{{ url_for('static', filename='img/ava.jpeg') }}" alt="Фотография">
+    <div class="info">
+        <h2>{{ user.name }}</h2>
+        <p>{{ user.age }} года</p>
+        <p>{{ user.city }}</p>
+    </div>
+</section>
+
+<!-- секция с образованием -->
+<section class="education">
+    <h2>Образование</h2>
+    {% for edu in educations %}
+    <div class="edublock">
+        <p>{{ edu.institution }}</p>
+        {% if edu.graduation_year %}
+        <p>Год окончания: {{ edu.graduation_year }}</p>
+        {% endif %}
+        <a href="{{ edu.link }}">{{ edu.link }}</a>
+    </div>
+    {% endfor %}
+</section>
+{%endblock%}

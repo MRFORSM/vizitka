@@ -1,0 +1,155 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f0f2f5;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.page-content {
+    flex-grow: 1;
+}
+
+header img {
+    padding: 10px;
+}
+
+header, footer {
+    background-color: #708090;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.profile img {
+    width: 150px;
+    height: 145px;
+    border-radius: 80%;
+    border-style: solid;
+    border-color: #4e5863;
+}
+
+.info {
+    margin-left: 20px;
+}
+
+.education, .projects, .contact {
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.projects h2 {
+    color: #4e5863;; /* Цвет заголовка */
+    font-size: 24px; /* Размер шрифта заголовка */
+    margin-bottom: 20px; /* Отступ снизу заголовка */
+}
+.carousel {
+    display: flex;
+    border-radius: 10px;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 20px;
+    justify-content: space-between;
+}
+
+.carousel-item {
+    flex: 0 0 auto;
+    width: 100%;
+    scroll-snap-align: start;
+    padding: 20px;
+    border-radius: 10px;
+    margin-right: 20px;
+    background-color: #e5e5e5;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; /* Изменено с center на flex-start */
+}
+
+.carousel-item img {
+    margin: 5%;
+    width: 25vw;
+    height: 40vh;
+    border-radius: 20px; 
+    border-style: solid;
+    border-color: #4e5863;
+    object-fit: cover; 
+}
+
+.carousel-content {
+    flex: 1;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 20px; /* Добавлено для создания пространства между изображением и контентом */
+}
+
+.carousel-content p {
+    font-size: 20px;
+    margin-bottom: 20px; /* Добавлено для создания пространства между описанием и кнопкой */
+}
+
+.carousel-content .button-link{
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #708090;
+    border-radius: 5px;
+    text-decoration: none;
+    width: 85px;
+    margin-top: 10px;
+}
+
+.carousel-content .button-link:hover {
+    background-color: #4e5863;
+}
+
+button {
+    background-color: #708090;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+}
+
+button:hover {
+    background-color: #1a4067;
+}
+
+
+.edublock {
+    padding: 10px;
+    border-style: solid;
+    border-color: #4e5863;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+
+select{
+  padding: 10px;
+  position: relative;
+  float: right;
+  margin-right: 10px ;
+  margin-top: 15px ;
+  border-radius: 5px;
+  color: white;
+  background: linear-gradient(#a9bee7,#111111)
+}

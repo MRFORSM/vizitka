@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block title %}{{ user.name }} {% endblock %}
+{% block content %}
+        <!-- секция с основной информацией о студенте  -->
+        <section class="profile">
+            <img src="/img/{{user.id}}" alt="Фотография">
+            <div class="info">
+            <h2>{{ user.name }}</h2>
+            <p>Возраст: {{ user.age }}</p>
+            <p>Город: {{ user.city }}</p>
+        </div>
+        </section>
+        <!-- секция с образованием -->
+        <section class="education">
+        <h2>Образование</h2>
+        {% if user.education %}
+            {% for education in user.education %}
+                <div class="edublock">
+                    <p>{{ education.institution }}</p>
+                    <p>Год окончания: {{ education.graduation_year }}</p>
+                    <a href="{{ education.link }}" target="_blank">Подробнее</a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Информация о образовании отсутствует.</p>
+        {% endif %}
+    </section>
+        <section class="projects">
+            <h2>Проекты</h2>
+            <div class="carousel">
+                <div class="carousel-item">
+                    <img src="../static/img/ozon.png">
+                    <div class="carousel-content">
+                    <p>Ozon tech (Отдел Курьерской доставки)</p>
+                    <p>Компетенции:</p>
+                    <p>-Python3</p>
+                    <p>-Kafka</p>
+                    <p>-SQL</p>
+                    <a href="https://ozon.tech/" target="_blank" class="button-link">Подробнее</a>
+                </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="../static/img/kjno.jpg">
+                    <div class="carousel-content">
+                    <p>Проект Карта жителя Новгородской области</p>
+                    <p>Компетенции:</p>
+                    <p>-Agile</p>
+                    <p>-Проектирование бизнес логики</p>
+                    <p>-Публичные выступления</p>
+                    <a href="http://cit.novreg.ru/KJNO" target="_blank" class="button-link">Подробнее</a>
+                </div>
+                </div>
+            </div>
+            <button id="prev">Назад</button>
+            <button id="next">Вперед</button>
+        </section>
+        <section class="contact">
+
+        </section>
+        {%endblock%}

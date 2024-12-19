@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{%block title%}{%endblock%}</title>
+    <link rel="stylesheet" href="../static/main.css">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header>
+        <img src="../static/img/logo.jpg">
+        <select class="select">
+            <option>выберите пользователя</option>
+            {% for user in users %}
+            <option value="/{{ user.id }}">{{ user.name }}</option>
+            {% endfor %}
+        </select>
+    </header>
+    <!-- Класс основного контента -->
+    <div class="page-content">
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</div>
+    <footer>
+        <p>© 2024 Все права защищены</p>
+    </footer>
+
+
+
+
+
+
+
+
+    <script>
+    document.getElementById('prev').addEventListener('click', () => {
+    document.querySelector('.carousel').scrollBy(-1000, 0);
+});
+    document.getElementById('next').addEventListener('click', () => {
+    document.querySelector('.carousel').scrollBy(1000, 0);
+});
+        const select = document.querySelector("select");
+        select.addEventListener("change", function() {
+          window.location.href = select.value
+        })
+
+    </script>
+</body>
+</html>
